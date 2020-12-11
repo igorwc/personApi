@@ -1,0 +1,46 @@
+
+## SIGN UP NEW PERSON
+curl --request POST \
+  --url http://localhost:8080/users/sign-up \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "username": "admin",
+    "password": "password"
+}'
+
+## LOGIN
+# GET A JWT ON RESPONSE
+curl --request POST \
+  --url http://localhost:8080/login \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "username": "admin",
+    "password": "password"
+}'
+
+
+## POST PERSON
+curl --request POST \
+  --url http://localhost:8080/api/v1/people \
+  --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYwNzkxNTY4OH0.X3y2FS20KwgInlrk5vigfgRfXqbFIUFr9ya5MW6J_s7LFMaFP6Y_uzrdAkKKzit6neTcsKeXEjVklEdSMk_hJw' \
+  --header 'Content-Type: application/json' \
+  --data ' {
+	   "firstName":"teste",  
+	 "lastName":"da silva",
+      "cpf":"17206134513",
+ 			"phones": [
+	 {
+	 "type":"HOME",
+	 "number":"5583956554544"
+ }
+	 ]  
+ }'
+ 
+## GET ALL PEOPLE
+curl --request GET \
+  --url http://localhost:8080/api/v1/people \
+  --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYwNzkxNTY4OH0.X3y2FS20KwgInlrk5vigfgRfXqbFIUFr9ya5MW6J_s7LFMaFP6Y_uzrdAkKKzit6neTcsKeXEjVklEdSMk_hJw' \
+  --header 'Content-Type: application/json' \
+  --data ' '
+  
+  
